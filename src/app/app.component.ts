@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { Article } from './article';
 import { BackendService } from './backend.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class AppComponent {
 
   result = '';
 
-  data$: Observable<any[]> = of([]);
+  data$: Observable<Article[]> = of([]);
 
   constructor(private backend: BackendService) {
     this.data$ = backend.getArticle();
