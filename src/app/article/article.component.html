@@ -19,6 +19,9 @@
           >{{item.category}}</a
         ></span
       >
+
+      <button type="button" (click)="doDelete()">刪除文章</button>
+
     </div>
   </header>
   <section class="post-body text" [innerHTML]="item.summary">

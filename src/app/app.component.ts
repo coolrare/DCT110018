@@ -27,4 +27,8 @@ export class AppComponent {
   doSearch(value: string) {
     this.result = value;
   }
+
+  deleteArticle(id: number) {
+    console.log("Delete Article ID: " + id);
+  }
 }
