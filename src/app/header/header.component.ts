@@ -13,7 +13,8 @@ export class HeaderComponent  {
   constructor() {
   }
 
-  changeTitle($event: PointerEvent) {
+  changeTitle($event: MouseEvent) {
+    console.log($event);
     if ($event.ctrlKey) {
       this.sitename = 'The Will Will Web';
     }
