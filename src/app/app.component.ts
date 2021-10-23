@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,6 +11,16 @@ export class AppComponent {
   keyword = '123';
 
   result = '';
+
+  data: any[] = [];
+
+  constructor(private http: HttpClient) {
+    http.get<any[]>('/api/articles.json').subscribe({
+      next: (data) => {
+        this.data = data;
+      }
+    })
+  }
 
   doSearch(value: string) {
     this.result = value;
