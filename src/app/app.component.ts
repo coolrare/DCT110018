@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { BackendService } from './backend.service';
 
 @Component({
@@ -12,17 +13,10 @@ export class AppComponent {
 
   result = '';
 
-  data: any[] = [];
+  data$: Observable<any[]> = of([]);
 
   constructor(private backend: BackendService) {
-    backend.getArticle().subscribe({
-      next: (data) => {
-        this.data = data;
-      },
-      error: () => {},
-      complete: () => {}
-    });
-
+    this.data$ = backend.getArticle();
   }
 
   doSearch(value: string) {

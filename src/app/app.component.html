@@ -13,7 +13,7 @@
         <!-- Article START-->
 
         <app-article
-          *ngFor="let item of data; let i=index"
+          *ngFor="let item of data$|async; let i=index"
           [item]="item"
           (delete)="deleteArticle($event)">
         </app-article>
