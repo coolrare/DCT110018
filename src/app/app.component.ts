@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { BackendService } from './backend.service';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +14,15 @@ export class AppComponent {
 
   data: any[] = [];
 
-  constructor(private http: HttpClient) {
-    http.get<any[]>('/api/articles.json').subscribe({
+  constructor(private backend: BackendService) {
+    backend.getArticle().subscribe({
       next: (data) => {
         this.data = data;
       },
       error: () => {},
       complete: () => {}
     });
+
   }
 
   doSearch(value: string) {
