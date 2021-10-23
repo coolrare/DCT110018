@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'DCT110018';
   keyword = '123';
+
+  result = '';
+
+  doSearch(value: string) {
+    this.result = value;
+  }
 }
