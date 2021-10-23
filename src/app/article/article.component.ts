@@ -7,6 +7,8 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 })
 export class ArticleComponent implements OnInit, OnChanges {
 
+  tmp = null;
+
   @Input() item: any;
 
   @Output() delete = new EventEmitter<number>();
