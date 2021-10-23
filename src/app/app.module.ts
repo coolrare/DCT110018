@@ -9,13 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './article/article.component';
+import { MaskPipe } from './mask.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ArticleComponent
+    ArticleComponent,
+    MaskPipe
   ],
   imports: [
     BrowserModule,
