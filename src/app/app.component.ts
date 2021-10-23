@@ -18,8 +18,10 @@ export class AppComponent {
     http.get<any[]>('/api/articles.json').subscribe({
       next: (data) => {
         this.data = data;
-      }
-    })
+      },
+      error: () => {},
+      complete: () => {}
+    });
   }
 
   doSearch(value: string) {
