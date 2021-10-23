@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent  {
 
+  counter = 0;
   sitename = 'Hello World';
   sitelogo = '/assets/images/logo.png';
 
@@ -14,6 +15,7 @@ export class HeaderComponent  {
   }
 
   changeTitle($event: MouseEvent) {
+    this.counter++;
     console.log($event);
     if ($event.ctrlKey) {
       this.sitename = 'The Will Will Web';
