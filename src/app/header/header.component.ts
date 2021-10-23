@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent  {
 
-  constructor() { }
+  sitename = 'Hello World';
+  sitelogo = '/assets/images/logo.png';
+
+  constructor() {
+  }
+
+  changeTitle($event: PointerEvent) {
+    if ($event.ctrlKey) {
+      this.sitename = 'The Will Will Web';
+    }
+  }
 
 }
